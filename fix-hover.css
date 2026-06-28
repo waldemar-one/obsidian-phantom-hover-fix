@@ -12,6 +12,7 @@
  * Fixed by restoring its original translateY(-50%) below.
  */
 
+/* * Apply GPU layer recomposition to elements that can have hover state */
 .nav-file-title,
 .nav-folder-title,
 .tree-item-self,
@@ -25,7 +26,8 @@
     transform: translateZ(0);
 }
 
-.search-result-file-match {
+.search-result-file-match,
+.bases-toolbar-item {
     will-change: background-color;
     transform: translateZ(0);
 }
@@ -33,5 +35,4 @@
 /* Restore position of keyboard icon in hotkey search field */
 .input-right-decorator {
     transform: translateY(-50%) !important;
-
 }
