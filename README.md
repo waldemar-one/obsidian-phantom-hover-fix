@@ -21,7 +21,7 @@ The cause is a long-standing Chromium bug (reported in 2014). When scrolling wit
 
 ## Compatibility
 
-Works with any theme. Tested on GitHub theme.
+Works with any theme. Tested on many themes: Minimal, Primary, Things, and others.
 
 ## Feedback
 
