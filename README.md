@@ -8,6 +8,15 @@ After scrolling with the mouse wheel, the hover state gets stuck on navigation e
 
 The cause is a long-standing Chromium bug (reported in 2014). When scrolling with the mouse wheel, the browser does not fire the `mouseleave` event because the cursor did not physically move, so the hover state just freezes. Since Obsidian is built on Electron (Chromium), the bug is present here as well.
 
+<img width="597" height="320" alt="hover-but" src="https://github.com/user-attachments/assets/d98751af-d1e1-409a-a3f8-57e01dc55ea6" />
+
+## Reproduction
+
+1. Open the file explorer sidebar
+2. Hover over any file — it highlights
+3. Scroll with the mouse wheel without moving the cursor
+4. The hover highlight stays stuck on the element
+
 ## Solution
 
 `transform: translateZ(0)` forces GPU compositing layer recreation and clears the stuck hover state. Side effect — the keyboard icon in the hotkey search field shifts down due to a transform conflict, fixed with a separate rule.
